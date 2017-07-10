@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Equals Files</string>
+    <string name="navigation_drawer_open">Abrir Menu</string>
+    <string name="navigation_drawer_close">Fechar Menu</string>
+    <string name="menu_comparacao">Comparação</string>
+    <string name="menu_resultados">Resultados</string>
+    <string name="menu_perfils">Perfils</string>
+    <string name="menu_indexacao">Indexação</string>
+    <string name="menu_historico">Histórico</string>
+    <string name="word_folders">Pastas</string>
+    <string name="option_is_name_sensitive">Verificar Nomes</string>
+    <string name="lbl_select_dir">Selecione uma pasta</string>
+    <string name="lbl_diretorios_list">Pastas Selecionadas:</string>
+    <string name="lbl_files">Arquivos:</string>
+    <string name="lbl_duplicades">Duplicatas:</string>
+    <string name="lbl_duration">Duração:</string>
+    <string name="action_settings">Configurações</string>
+    <string name="action_add">Adiconar</string>
+    <string name="action_stop">Parar</string>
+    <string name="word_yes">Sim</string>
+    <string name="word_no">Não</string>
+    <string name="msg_error">Erro</string>
+    <string name="msg_duplicate_dir">Diretório já inserido!</string>
+    <string name="msg_dir_cant_read">Não é permitido ler esta pasta!</string>
+    <string name="msg_stop_process">Você quer perder este processo?</string>
+    <string name="msg_choose_dirs">Selecione ao menos uma pasta!</string>
+    <string name="title_running">Processando</string>
+    <string name="title_saved">Salvos</string>
+    <string name="title_no_data">Sem registros</string>
+    <string name="lbl_data">Data:</string>
+    <string name="lbl_extensions">Extenções:</string>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Comparação">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menuComparar"
+                    android:icon="@drawable/ic_comparar"
+                    android:title="@string/menu_comparacao" />
+                <item
+                    android:id="@+id/menuResultados"
+                    android:icon="@drawable/ic_resultados"
+                    android:title="@string/menu_resultados" />
+                <item
+                    android:id="@+id/menuPerfils"
+                    android:icon="@drawable/ic_perfils"
+                    android:title="@string/menu_perfils" />
+            </group>
+        </menu>
+
+    </item>
+    <item android:title="Indexação">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menuIndexar"
+                    android:icon="@drawable/ic_indexacao"
+                    android:title="@string/menu_indexacao" />
+                <item
+                    android:id="@+id/menuHistorico"
+                    android:icon="@drawable/ic_historico"
+                    android:title="@string/menu_historico" />
+            </group>
+        </menu>
+    </item>
+
+</menu>

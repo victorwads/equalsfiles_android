@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/default_gap"
+    android:elevation="@dimen/default_gap">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/default_gap">
+
+        <TextView
+            android:id="@+id/lbl_files"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_files"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/txt_arquivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_gap"
+            android:layout_marginStart="@dimen/default_gap"
+            android:gravity="center"
+            android:textColor="@color/txt_red"
+            app:layout_constraintLeft_toRightOf="@+id/lbl_files"
+            app:layout_constraintTop_toTopOf="@+id/lbl_files"/>
+
+        <TextView
+            android:id="@+id/txt_tamanho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_gap"
+            android:layout_marginStart="@dimen/default_gap"
+            android:gravity="center"
+            android:textColor="@color/txt_gren"
+            app:layout_constraintLeft_toRightOf="@+id/txt_arquivo"
+            app:layout_constraintTop_toTopOf="@+id/lbl_files"/>
+
+        <TextView
+            android:id="@+id/lbl_duplicatas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_gap"
+            android:text="@string/lbl_duplicades"
+            app:layout_constraintLeft_toLeftOf="@+id/lbl_files"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_files"/>
+
+        <TextView
+            android:id="@+id/txt_duplicatas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_gap"
+            android:layout_marginStart="@dimen/default_gap"
+            android:gravity="center"
+            android:textColor="@color/txt_red"
+            app:layout_constraintLeft_toRightOf="@+id/lbl_duplicatas"
+            app:layout_constraintTop_toTopOf="@+id/lbl_duplicatas"/>
+
+        <TextView
+            android:id="@+id/txt_duplicatas_tamanho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_gap"
+            android:layout_marginStart="@dimen/default_gap"
+            android:gravity="center"
+            android:textColor="@color/txt_gren"
+            app:layout_constraintLeft_toRightOf="@+id/txt_duplicatas"
+            app:layout_constraintTop_toTopOf="@+id/lbl_duplicatas"/>
+
+
+        <TextView
+            android:id="@+id/lbl_duracao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center"
+            android:layout_marginEnd="@dimen/default_gap"
+            android:text="@string/lbl_duration"
+            app:layout_constraintRight_toLeftOf="@+id/txt_duracao"
+            app:layout_constraintTop_toTopOf="@+id/txt_duracao"/>
+
+        <TextView
+            android:id="@+id/txt_duracao"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/txt_cyan"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:tint="@color/white"
+            android:visibility="gone"
+            app:backgroundTint="@color/colorPrimary"
+            app:fabSize="mini"
+            app:layout_constraintRight_toLeftOf="@+id/btn_fechar"
+            app:layout_constraintTop_toBottomOf="@+id/txt_duracao"
+            app:srcCompat="@drawable/ic_save"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_fechar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_gap"
+            android:clickable="true"
+            android:tint="@color/white"
+            app:backgroundTint="@color/colorMenuBackground"
+            app:fabSize="mini"
+            app:layout_constraintRight_toRightOf="@+id/txt_duracao"
+            app:layout_constraintTop_toBottomOf="@+id/txt_duracao"
+            app:srcCompat="@drawable/ic_close"/>
+
+        <ProgressBar
+            android:id="@+id/bar_progresso"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@+id/btn_fechar"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_progresso"
+            tools:ignore="MissingConstraints"/>
+
+        <TextView
+            android:id="@+id/lbl_progresso"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="@dimen/default_gap"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/lbl_duplicatas"
+            app:layout_constraintRight_toLeftOf="@+id/btn_fechar"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_duplicatas"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>
