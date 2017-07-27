@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\victo\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\d0f5729481c67e22da4bb72f98a16b62\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\victo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\fbbfa93ce9cbbfde8c80ca6b2d51b5ea\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\victo\.gradle\caches\transforms-1\files-1.1\design-25.3.1.aar\f84bd07b7dac78667ee24513c6b46327\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\victo\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.3.1.aar\bc463a092dec08151e26021b1f74574c\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\10.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\victo\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.3.1.aar\d28cb78ffac83d2d1e1851d4f2e7f795\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\11.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\victo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\a90329b20fb11ce74aab3b7f9a023337\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\16.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\victo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\5c33bd79934ed324bb3361ceb12ebe02\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\victo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.3.1.aar\9a14988522d845e8086fd8dc873c49c0\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\victo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\e1d6040866bda647a35a3e96a9ca5a2f\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\victo\.gradle\caches\transforms-1\files-1.1\support-fragment-25.3.1.aar\8c28da9360d9178f676a1d8824a7f5c8\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\victo\.gradle\caches\transforms-1\files-1.1\transition-25.3.1.aar\f0e9164c1aeef99a6cc3c93475ce5fab\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\victo\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.3.1.aar\d69bcf32828f0b6cfb863872ad74afaa\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\15.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\victo\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.3.1.aar\f229b9f8d9357f84d266d017f034bb00\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\victo\.gradle\caches\transforms-1\files-1.1\support-compat-25.3.1.aar\109b0923ae733897cd066e815a41d632\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.0"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="D:\Users\victor\OneDrive\Documentos\AndroidStudioProjects\EqualsFiles\app\build\intermediates\transforms\preDex\release\14.jar" />
+    </item>
+
+</items>
