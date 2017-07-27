@@ -15,7 +15,7 @@
     <string name="lbl_duplicades">Duplicatas:</string>
     <string name="lbl_duration">Duração:</string>
     <string name="action_settings">Configurações</string>
-    <string name="action_add">Adiconar</string>
+    <string name="action_add_dir">Adicionar Pasta</string>
     <string name="action_stop">Parar</string>
     <string name="word_yes">Sim</string>
     <string name="word_no">Não</string>
@@ -28,5 +28,5 @@
     <string name="title_saved">Salvos</string>
     <string name="title_no_data">Sem registros</string>
     <string name="lbl_data">Data:</string>
-    <string name="lbl_extensions">Extenções:</string>
+    <string name="lbl_extensions">Extensões:</string>
 </resources>

@@ -1,7 +1,7 @@
 package br.com.victorwads.equalsfiles.view;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.annotation.IntegerRes;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -16,14 +16,18 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
 import br.com.victorwads.equalsfiles.R;
 import br.com.victorwads.equalsfiles.controller.Resultados;
 import br.com.victorwads.equalsfiles.model.Arquivo;
+import br.com.victorwads.equalsfiles.model.Diretorio;
 import br.com.victorwads.equalsfiles.model.Resultado;
+import br.com.victorwads.equalsfiles.view.components.ObjectCheckBox;
 import br.com.victorwads.equalsfiles.view.util.DateTime;
+import br.com.victorwads.equalsfiles.view.util.Dialogos;
 import br.com.victorwads.equalsfiles.view.util.ResultadoAdapter;
 
 import static br.com.victorwads.equalsfiles.controller.CacheMD5.humamSize;
@@ -42,7 +46,8 @@ public class FragmentResultado extends Fragment implements AdapterView.OnItemSel
 	private Resultado resultado;
 	private String extensao = null;
 	private String[] ordem;
-	private final ArrayList<String> exts = new ArrayList<>(), toDelete = new ArrayList<>();
+	private final ArrayList<String> exts = new ArrayList<>();
+	private final ArrayList<Arquivo> toDelete = new ArrayList<>();
 
 	@Nullable
 	@Override
@@ -72,9 +77,27 @@ public class FragmentResultado extends Fragment implements AdapterView.OnItemSel
 		TextView txtTamanho = (TextView) view.findViewById(R.id.txt_tamanho);
 		TextView txtDuracao = (TextView) view.findViewById(R.id.txt_duracao);
 
+		//Carregar informações na View
 		txtArquivos.setText(Integer.toString(resultado.getQuantidadeArquivos()));
 		txtTamanho.setText(humamSize(resultado.getTamanhoArquivos()));
 		txtDuracao.setText(DateTime.getDurationStringFromSeconds(resultado.getDuracao()));
+
+		//Ação de excluir
+		btnAction.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View v){
+				long total = 0;
+				for(Arquivo s : toDelete){
+					total += s.getSize();
+				}
+				Dialogos.pergunta(getContext(), "Excluir arquivos selecionados, " + humamSize(total) + "?", new DialogInterface.OnClickListener(){
+					@Override
+					public void onClick(DialogInterface dialog, int which){
+						excluirAll();
+					}
+				}, null);
+			}
+		});
 
 		ordem = resultado.getSortedHashs();
 		exts.clear();
@@ -101,10 +124,12 @@ public class FragmentResultado extends Fragment implements AdapterView.OnItemSel
 		Spinner cmbEstensoes = (Spinner) view.findViewById(R.id.cmb_estensoes);
 		cmbEstensoes.setAdapter(ad);
 		cmbEstensoes.setOnItemSelectedListener(this);
-		//Set First Item?
-		int i = exts.size() > 1 ? 1 : 0;
-		cmbEstensoes.setSelection(i);
-		extensao = exts.get(i);
+		//Set First Item
+		if(exts.size() != 0){
+			int i = exts.size() > 1 ? 1 : 0;
+			cmbEstensoes.setSelection(i);
+			extensao = exts.get(i);
+		}
 
 		attData();
 	}
@@ -137,16 +162,18 @@ public class FragmentResultado extends Fragment implements AdapterView.OnItemSel
 			l3.setText(humamSize(first.getSize() * arquivos.size()));
 
 			boolean flag = false;
+			ObjectCheckBox<Arquivo> checkbox;
 			for(Arquivo f : arquivos){
-				CheckBox checkbox = new CheckBox(getContext());
+				checkbox = new ObjectCheckBox<>(getContext());
 				checkbox.setTextSize(TypedValue.COMPLEX_UNIT_SP, 12);
 				checkbox.setText(f.getFullName());
 				checkbox.setOnClickListener(this);
+				checkbox.object = f;
 				cardView.addView(checkbox);
 				if(flag){
 					checkbox.setChecked(true);
 					f.setToExclude(true);
-					toDelete.add(f.getFullName());
+					toDelete.add(f);
 				}
 				flag = true;
 			}
@@ -157,6 +184,14 @@ public class FragmentResultado extends Fragment implements AdapterView.OnItemSel
 		txtDuplicatas.setText(humamSize(totalToFree));
 		txtTamanhoDuplicatas.setText(Integer.toString(quantidade));
 		popUp();
+	}
+
+	private void excluirAll(){
+		for(Arquivo s : toDelete){
+			new File(s.getFullName()).delete();
+			resultado.removeFile(s);
+		}
+		attData();
 	}
 
 	private void popUp(){
@@ -177,11 +212,11 @@ public class FragmentResultado extends Fragment implements AdapterView.OnItemSel
 
 	@Override
 	public void onClick(View v){
-		CheckBox c = (CheckBox) v;
+		ObjectCheckBox<Arquivo> c = (ObjectCheckBox<Arquivo>) v;
 		if(c.isChecked()){
-			toDelete.add((String) c.getText());
+			toDelete.add(c.object);
 		}else{
-			toDelete.remove((String) c.getText());
+			toDelete.remove(c.object);
 		}
 		popUp();
 	}
