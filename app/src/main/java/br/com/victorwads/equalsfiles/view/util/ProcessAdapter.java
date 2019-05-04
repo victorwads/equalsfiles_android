@@ -128,16 +128,16 @@ public class ProcessAdapter extends RecyclerView.Adapter<ProcessAdapter.Card>{
 		public Card(View itemView){
 			super(itemView);
 
-			card = (CardView) itemView.findViewById(R.id.cv);
-			barProgresso = (ProgressBar) itemView.findViewById(R.id.bar_progresso);
-			lblProgresso = (TextView) itemView.findViewById(R.id.lbl_progresso);
-			txtArquivos = (TextView) itemView.findViewById(R.id.txt_arquivo);
-			txtTamanho = (TextView) itemView.findViewById(R.id.txt_tamanho);
-			txtDuplicatas = (TextView) itemView.findViewById(R.id.txt_duplicatas);
-			txtTamanhoDuplicatas = (TextView) itemView.findViewById(R.id.txt_duplicatas_tamanho);
-			txtDuracao = (TextView) itemView.findViewById(R.id.txt_duracao);
+			card = itemView.findViewById(R.id.cv);
+			barProgresso = itemView.findViewById(R.id.bar_progresso);
+			lblProgresso = itemView.findViewById(R.id.lbl_progresso);
+			txtArquivos = itemView.findViewById(R.id.txt_arquivo);
+			txtTamanho = itemView.findViewById(R.id.txt_tamanho);
+			txtDuplicatas = itemView.findViewById(R.id.txt_duplicatas);
+			txtTamanhoDuplicatas = itemView.findViewById(R.id.txt_duplicatas_tamanho);
+			txtDuracao = itemView.findViewById(R.id.txt_duracao);
 
-			btnAction = (FloatingActionButton) itemView.findViewById(R.id.btn_action);
+			btnAction = itemView.findViewById(R.id.btn_action);
 			btnAction.setOnClickListener(new View.OnClickListener(){
 				boolean cliked = false;
 
@@ -149,7 +149,7 @@ public class ProcessAdapter extends RecyclerView.Adapter<ProcessAdapter.Card>{
 				}
 			});
 
-			btnFechar = (FloatingActionButton) itemView.findViewById(R.id.btn_fechar);
+			btnFechar = itemView.findViewById(R.id.btn_fechar);
 			btnFechar.setOnClickListener(new View.OnClickListener(){
 				@Override
 				public void onClick(View view){

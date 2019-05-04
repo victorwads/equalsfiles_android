@@ -52,12 +52,9 @@ public class SQLDroidDriver implements java.sql.Driver {
     @Override
     public boolean acceptsURL(String url) throws SQLException {
 
-        if(url.startsWith(sqldroidPrefix) || url.startsWith(xerialPrefix)) {
-            return true;
-        }
+		return url.startsWith(sqldroidPrefix) || url.startsWith(xerialPrefix);
 
-        return false;
-    }
+	}
 
     @Override
     public Connection connect(String url, Properties info) throws SQLException {

@@ -57,13 +57,13 @@ public class MenuApp extends AppCompatActivity implements NavigationView.OnNavig
 		setContentView(R.layout.activity_menu);
 
 		//Tolbar
-		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		Toolbar toolbar = findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 
 		//Navigation
-		navigationView = (NavigationView) findViewById(R.id.nav_view);
+		navigationView = findViewById(R.id.nav_view);
 		navigationView.setNavigationItemSelectedListener(this);
-		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		DrawerLayout drawer = findViewById(R.id.drawer_layout);
 		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 		drawer.addDrawerListener(toggle);
 		toggle.syncState();
@@ -74,7 +74,7 @@ public class MenuApp extends AppCompatActivity implements NavigationView.OnNavig
 			lastFragment = backHistory.get(backHistory.size() - 1);
 		}else{
 			MenuItem first = navigationView.getMenu().getItem(0);
-			while(first.hasSubMenu()) first = ((Menu) first.getSubMenu()).getItem(0);
+			while(first.hasSubMenu()) first = first.getSubMenu().getItem(0);
 			lastFragment = first.getItemId();
 		}
 		changeFragment(lastFragment, null);
@@ -143,7 +143,7 @@ public class MenuApp extends AppCompatActivity implements NavigationView.OnNavig
 
 	@Override
 	public void onBackPressed(){
-		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		DrawerLayout drawer = findViewById(R.id.drawer_layout);
 		if(drawer.isDrawerOpen(GravityCompat.START)){
 			drawer.closeDrawer(GravityCompat.START);
 		}else{
@@ -177,7 +177,7 @@ public class MenuApp extends AppCompatActivity implements NavigationView.OnNavig
 	public boolean onNavigationItemSelected(MenuItem item){
 		changeFragment(item.getItemId(), null);
 
-		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		DrawerLayout drawer = findViewById(R.id.drawer_layout);
 		drawer.closeDrawer(GravityCompat.START);
 		return true;
 	}

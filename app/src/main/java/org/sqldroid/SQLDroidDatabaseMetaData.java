@@ -303,7 +303,7 @@ public class SQLDroidDatabaseMetaData implements DatabaseMetaData {
 		.append("'' as PKCOLUMN_NAME, ").append(quote(fc)).append(" as FKTABLE_CAT, ")
 		.append(quote(fs)).append(" as FKTABLE_SCHEM, ").append(quote(ft)).append(" as FKTABLE_NAME, ")
 		.append("'' as FKCOLUMN_NAME, -1 as KEY_SEQ, 3 as UPDATE_RULE, 3 as DELETE_RULE, '' as FK_NAME, '' as PK_NAME, ")
-		.append(Integer.toString(importedKeyInitiallyDeferred)).append(" as DEFERRABILITY limit 0 ");
+		.append(importedKeyInitiallyDeferred).append(" as DEFERRABILITY limit 0 ");
 
 		return con.createStatement().executeQuery(query.toString());
 	}
@@ -414,7 +414,7 @@ public class SQLDroidDatabaseMetaData implements DatabaseMetaData {
 
 						exportedKeysQuery
 						.append(count > 0 ? " union all select " : "select ")
-						.append(Integer.toString(keySeq)).append(" as ks, lower('")
+						.append(keySeq).append(" as ks, lower('")
 						.append(escape(tbl)).append("') as fkt, lower('")
 						.append(escape(fk.getString(4))).append("') as fcn, '")
 						.append(escape(PKColName)).append("' as pcn, ")
@@ -469,7 +469,7 @@ public class SQLDroidDatabaseMetaData implements DatabaseMetaData {
 		.append(hasImportedKey ? "dr" : "3").append(" as DELETE_RULE, ")
 		.append(hasImportedKey ? "fkn" : "''").append(" as FK_NAME, ")
 		.append(pkFinder.getName() != null ? pkFinder.getName() : "''").append(" as PK_NAME, ")
-		.append(Integer.toString(importedKeyInitiallyDeferred)) // FIXME: Check for pragma foreign_keys = true ?
+		.append(importedKeyInitiallyDeferred) // FIXME: Check for pragma foreign_keys = true ?
 		.append(" as DEFERRABILITY ");
 
 		if (hasImportedKey) {
@@ -506,7 +506,7 @@ public class SQLDroidDatabaseMetaData implements DatabaseMetaData {
 		.append(quote(schema)).append(" as FKTABLE_SCHEM, ")
 		.append(quote(table)).append(" as FKTABLE_NAME, ")
 		.append("fcn as FKCOLUMN_NAME, ks as KEY_SEQ, ur as UPDATE_RULE, dr as DELETE_RULE, '' as FK_NAME, '' as PK_NAME, ")
-		.append(Integer.toString(importedKeyInitiallyDeferred)).append(" as DEFERRABILITY from (");
+		.append(importedKeyInitiallyDeferred).append(" as DEFERRABILITY from (");
 
 		// Use a try catch block to avoid "query does not return ResultSet" error
 		try {
@@ -577,7 +577,7 @@ public class SQLDroidDatabaseMetaData implements DatabaseMetaData {
 
 		sql.append("select null as TABLE_CAT, null as TABLE_SCHEM, '")
 		.append(escape(table)).append("' as TABLE_NAME, un as NON_UNIQUE, null as INDEX_QUALIFIER, n as INDEX_NAME, ")
-		.append(Integer.toString(tableIndexOther)).append(" as TYPE, op as ORDINAL_POSITION, ")
+		.append(tableIndexOther).append(" as TYPE, op as ORDINAL_POSITION, ")
 		.append("cn as COLUMN_NAME, null as ASC_OR_DESC, 0 as CARDINALITY, 0 as PAGES, null as FILTER_CONDITION from (");
 
 		// Use a try catch block to avoid "query does not return ResultSet" error
@@ -612,9 +612,9 @@ public class SQLDroidDatabaseMetaData implements DatabaseMetaData {
 					sql.append(" union all ");
 				}
 
-				sql.append("select ").append(Integer.toString(1 - (Integer)currentIndex.get(1))).append(" as un,'")
+				sql.append("select ").append((1 - (Integer) currentIndex.get(1))).append(" as un,'")
 				.append(escape(indexName)).append("' as n,")
-				.append(Integer.toString(rs.getInt(1) + 1)).append(" as op,'")
+				.append((rs.getInt(1) + 1)).append(" as op,'")
 				.append(escape(rs.getString(3))).append("' as cn");
 			}
 
@@ -1586,8 +1586,10 @@ public class SQLDroidDatabaseMetaData implements DatabaseMetaData {
 		/** The primary key name. */
 		String pkName = null;
 
-		/** The column(s) for the primary key. */
-		String pkColumns[] = null;
+		/**
+		 * The column(s) for the primary key.
+		 */
+		String[] pkColumns = null;
 
 		/**
 		 * Constructor.

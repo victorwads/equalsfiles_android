@@ -78,10 +78,10 @@ public class FragmentResultados extends Fragment{
 
 	private void initComponents(){
 		if(getContext() == null) return;
-		resultadosTitle = (TextView) view.findViewById(R.id.title_saveds);
-		processosTilte = (TextView) view.findViewById(R.id.title_processando);
-		recycler_saved = (RecyclerView) view.findViewById(R.id.recycler_saved);
-		recycler_running = (RecyclerView) view.findViewById(R.id.recycler_running);
+		resultadosTitle = view.findViewById(R.id.title_saveds);
+		processosTilte = view.findViewById(R.id.title_processando);
+		recycler_saved = view.findViewById(R.id.recycler_saved);
+		recycler_running = view.findViewById(R.id.recycler_running);
 
 		LinearLayoutManager manager_saved = new LinearLayoutManager(getContext());
 		recycler_saved.setLayoutManager(manager_saved);

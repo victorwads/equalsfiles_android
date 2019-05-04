@@ -15,7 +15,7 @@ public class ArquivoHistorico extends Arquivo {
 		NOVO("Novo"), EXCLUIDO("Excluído"), ALTERADO("Alterado"), NAO_ALTERADO("");
 		private String nome;
 
-		private Tipo(String nome) {
+		Tipo(String nome) {
 			this.nome = nome;
 		}
 
@@ -32,7 +32,7 @@ public class ArquivoHistorico extends Arquivo {
 			return "";
 		}
 
-	};
+	}
 
 	private int id, idRoot;
 	private long modificado;

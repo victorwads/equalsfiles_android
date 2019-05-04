@@ -16,7 +16,7 @@ public class Duracao extends TimerTask {
 
 	public interface Listenner {
 
-		public void update(int duracao);
+		void update(int duracao);
 	}
 
 	private final Timer interval;
