@@ -18,7 +18,7 @@ import br.com.victorwads.equalsfiles.R
 
 class MenuApp : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    object Fragments {
+    class HoldFragments {
         private val fragmentComparacao = FragmentComparacao()
         private val fragmentResultados = FragmentResultados()
         private val fragmentResultado = FragmentResultado()
@@ -39,6 +39,7 @@ class MenuApp : AppCompatActivity(), NavigationView.OnNavigationItemSelectedList
         }
     }
 
+    private lateinit var holdFragments: HoldFragments
     private val backHistory = ArrayList<Int>()
     private var navigationView: NavigationView? = null
 
@@ -88,7 +89,7 @@ class MenuApp : AppCompatActivity(), NavigationView.OnNavigationItemSelectedList
     }
 
     fun changeFragment(id: Int, extras: Bundle?) {
-        val fragment = Fragments.getFragment(id) ?: return
+        val fragment = holdFragments.getFragment(id) ?: return
         if (extras != null)
             fragment.arguments = extras
         val ft = supportFragmentManager.beginTransaction()
@@ -108,6 +109,7 @@ class MenuApp : AppCompatActivity(), NavigationView.OnNavigationItemSelectedList
         Main.USERHOME = filesDir
         loadData(savedInstanceState)
         initComponents()
+        holdFragments = HoldFragments()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
