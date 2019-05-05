@@ -109,7 +109,7 @@ public class SQLDroidBlob implements Blob {
     }
     sb.append("(");
     for ( int counter = 0 ; counter < length ; counter++ ) {
-      sb.append (Character.toString((char)b[counter]));
+      sb.append ((char) b[counter]);
       if ( counter == length-1 ) {
         sb.append(")");
       } else {

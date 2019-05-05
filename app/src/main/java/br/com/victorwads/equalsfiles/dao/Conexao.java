@@ -25,7 +25,7 @@ public class Conexao{
 
 	protected Connection con;
 	private boolean autoClose = true;
-	final public static String BD_FILE = Main.USERHOME.getAbsolutePath() + File.separator + "EqualsFiles.cache";
+	final public static String BD_FILE = Main.INSTANCE.getUSERHOME().getAbsolutePath() + File.separator + "EqualsFiles.cache";
 	final private static String TABLE_INDEXACAO_ROOTS = "CREATE TABLE IndexacaoRoots (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, patch VARCHAR NOT NULL UNIQUE)";
 	final private static String TABLE_INDEXACAO = "CREATE TABLE Indexacao (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, idRoot INTEGER REFERENCES IndexacaoRoots (id)  NOT NULL, diretorio VARCHAR NOT NULL, nome VARCHAR NOT NULL, type TINYINT NOT NULL, modificado DATETIME NOT NULL, UNIQUE(diretorio, nome))";
 	final private static String TABLE_INDEXACAO_HISTORICO = "CREATE TABLE IndexacaoHistorico (idCaminho INTEGER  NOT NULL REFERENCES Indexacao (id), type TINYINT NOT NULL, modificado DATETIME NOT NULL)";

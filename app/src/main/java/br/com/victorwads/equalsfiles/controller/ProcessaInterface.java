@@ -14,61 +14,61 @@ public interface ProcessaInterface {
 	/**
 	 *
 	 */
-	public void clear();
+	void clear();
 
 	/**
 	 *
 	 * @param i
 	 */
-	public void setLoadingTotal(int i);
+	void setLoadingTotal(int i);
 
 	/**
 	 *
 	 * @param i
 	 */
-	public void loading(int i);
+	void loading(int i);
 
 	/**
 	 *
 	 * @param path
 	 * @param i
 	 */
-	public void loading(String path, int i);
+	void loading(String path, int i);
 
 	/**
 	 *
 	 * @param info
 	 * @param infinita
 	 */
-	public void loading(String info, boolean infinita);
+	void loading(String info, boolean infinita);
 
 	/**
 	 *
 	 * @param tamanho
 	 * @param quantidade
 	 */
-	public void setDuplicates(long tamanho, int quantidade);
+	void setDuplicates(long tamanho, int quantidade);
 
 	/**
 	 *
 	 * @param quantidade
 	 */
-	public void setFilesAmount(int quantidade);
+	void setFilesAmount(int quantidade);
 
 	/**
 	 *
 	 * @param tamanho
 	 */
-	public void setFilesSize(long tamanho);
+	void setFilesSize(long tamanho);
 
 	/**
 	 *
 	 * @param segundos
 	 */
-	public void setDuration(int segundos);
+	void setDuration(int segundos);
 
 	/**
 	 *
 	 */
-	public void finish();
+	void finish();
 }

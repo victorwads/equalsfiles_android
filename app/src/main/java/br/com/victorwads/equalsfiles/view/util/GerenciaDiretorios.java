@@ -145,7 +145,7 @@ public class GerenciaDiretorios{
 	public Diretorio[] getDiretorios(){
 		Diretorio[] diretorios = new Diretorio[DIRETORIOS.size()];
 		for(int i = 0; i < DIRETORIOS.size(); i++){
-			diretorios[i] = (Diretorio) DIRETORIOS.get(i);
+			diretorios[i] = DIRETORIOS.get(i);
 		}
 		return diretorios;
 	}

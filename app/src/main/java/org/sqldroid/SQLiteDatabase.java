@@ -34,7 +34,7 @@ import android.database.sqlite.SQLiteException;
  */
 public class SQLiteDatabase{
 
-	protected static enum Transaction{
+	protected enum Transaction{
 		setTransactionSuccessful, endTransaction, close, beginTransaction
 	}
 

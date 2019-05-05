@@ -10,5 +10,5 @@ package br.com.victorwads.equalsfiles.controller;
  * @author victo
  */
 public interface ThreadListListenner {
-    public void changeState(int threadRunning, int threadQueueTotal, int threadTotal);
+    void changeState(int threadRunning, int threadQueueTotal, int threadTotal);
 }

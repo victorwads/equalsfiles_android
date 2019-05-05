@@ -66,16 +66,16 @@ public class FragmentResultado extends Fragment implements AdapterView.OnItemSel
 		layoutInflater = getActivity().getLayoutInflater();
 
 		//Init Vars
-		btnAction = (FloatingActionButton) view.findViewById(R.id.btn_excluir);
-		txtAnim = (TextView) view.findViewById(R.id.txt_anim);
-		txtTamanhoDuplicatas = (TextView) view.findViewById(R.id.txt_duplicatas);
-		txtDuplicatas = (TextView) view.findViewById(R.id.txt_duplicatas_tamanho);
-		box = (LinearLayout) view.findViewById(R.id.box);
+		btnAction = view.findViewById(R.id.btn_excluir);
+		txtAnim = view.findViewById(R.id.txt_anim);
+		txtTamanhoDuplicatas = view.findViewById(R.id.txt_duplicatas);
+		txtDuplicatas = view.findViewById(R.id.txt_duplicatas_tamanho);
+		box = view.findViewById(R.id.box);
 
 		//Local Vars
-		TextView txtArquivos = (TextView) view.findViewById(R.id.txt_arquivo);
-		TextView txtTamanho = (TextView) view.findViewById(R.id.txt_tamanho);
-		TextView txtDuracao = (TextView) view.findViewById(R.id.txt_duracao);
+		TextView txtArquivos = view.findViewById(R.id.txt_arquivo);
+		TextView txtTamanho = view.findViewById(R.id.txt_tamanho);
+		TextView txtDuracao = view.findViewById(R.id.txt_duracao);
 
 		//Carregar informações na View
 		txtArquivos.setText(Integer.toString(resultado.getQuantidadeArquivos()));
@@ -121,7 +121,7 @@ public class FragmentResultado extends Fragment implements AdapterView.OnItemSel
 		ArrayAdapter<String> ad = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, exts);
 		ad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-		Spinner cmbEstensoes = (Spinner) view.findViewById(R.id.cmb_estensoes);
+		Spinner cmbEstensoes = view.findViewById(R.id.cmb_estensoes);
 		cmbEstensoes.setAdapter(ad);
 		cmbEstensoes.setOnItemSelectedListener(this);
 		//Set First Item
@@ -153,10 +153,10 @@ public class FragmentResultado extends Fragment implements AdapterView.OnItemSel
 			totalToFree += first.getSize() * (arquivos.size() - 1);
 
 			View newView = layoutInflater.inflate(R.layout.item_card_resultado_md5, null, false);
-			LinearLayout cardView = (LinearLayout) newView.findViewById(R.id.box_arquivos);
-			TextView l1 = (TextView) newView.findViewById(R.id.txt_nome_arquivo);
-			TextView l2 = (TextView) newView.findViewById(R.id.txt_quantidade);
-			TextView l3 = (TextView) newView.findViewById(R.id.txt_tamanho);
+			LinearLayout cardView = newView.findViewById(R.id.box_arquivos);
+			TextView l1 = newView.findViewById(R.id.txt_nome_arquivo);
+			TextView l2 = newView.findViewById(R.id.txt_quantidade);
+			TextView l3 = newView.findViewById(R.id.txt_tamanho);
 			l1.setText(first.nome);
 			l2.setText(humamSize(first.getSize()));
 			l3.setText(humamSize(first.getSize() * arquivos.size()));

@@ -13,7 +13,7 @@ public class SQLDroidResultSetMetaData implements ResultSetMetaData {
     private static Method getType;
     static {
         try {
-            getType = Cursor.class.getMethod("getType", new Class[] {int.class});
+            getType = Cursor.class.getMethod("getType", int.class);
         } catch (Exception e) {
             getType = null;
         }

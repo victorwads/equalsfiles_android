@@ -88,8 +88,8 @@ public class FragmentComparacao extends Fragment{
 	}
 
 	private void initComponents(){
-		checkNameSensitive = (CheckBox) view.findViewById(R.id.check_name_sensitive);
-		btnIniciar = (FloatingActionButton) view.findViewById(R.id.btn_iniciar);
+		checkNameSensitive = view.findViewById(R.id.check_name_sensitive);
+		btnIniciar = view.findViewById(R.id.btn_iniciar);
 		btnIniciar.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v){
@@ -97,7 +97,7 @@ public class FragmentComparacao extends Fragment{
 			}
 		});
 
-		Button btnAdd = (Button) view.findViewById(R.id.btn_adicionar);
+		Button btnAdd = view.findViewById(R.id.btn_adicionar);
 		btnAdd.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View view){

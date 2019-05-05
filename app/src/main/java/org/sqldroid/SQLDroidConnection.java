@@ -186,7 +186,7 @@ public class SQLDroidConnection implements Connection {
                 //return new SQLException (sqlException);
                 // creating by reflection is significantly slower, but since Exceptions should be unusual
                 // this should not be a performance issue.
-                final Constructor<?> c = SQLException.class.getDeclaredConstructor(new Class[] {Throwable.class});
+                final Constructor<?> c = SQLException.class.getDeclaredConstructor(Throwable.class);
                 return (SQLException)c.newInstance(new Object[]{sqlException});
             } catch ( Exception e) {
                 sqlThrowable = 1;
@@ -196,7 +196,7 @@ public class SQLDroidConnection implements Connection {
         // to go through this clause and create a SQLDroidSQLException
         try {
             // avoid a direct reference to the sqldroidSQLException so that app > API level 9 do not need that class.
-            final Constructor<?> c = SQLDroidConnection.class.getClassLoader().loadClass("org.sqldroid.SQLDroidSQLException").getDeclaredConstructor(new Class[] {android.database.SQLException.class});
+            final Constructor<?> c = SQLDroidConnection.class.getClassLoader().loadClass("org.sqldroid.SQLDroidSQLException").getDeclaredConstructor(android.database.SQLException.class);
             // SQLDroidSQLException is an instance of (direct subclass of) SQLException, so the cast below is correct although
             // the instance created will always be a SQLDroidSQLException
             return (SQLException)c.newInstance(new Object[]{sqlException});
