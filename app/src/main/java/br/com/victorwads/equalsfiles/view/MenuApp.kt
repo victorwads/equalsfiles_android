@@ -106,10 +106,10 @@ class MenuApp : AppCompatActivity(), NavigationView.OnNavigationItemSelectedList
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        holdFragments = HoldFragments()
         Main.USERHOME = filesDir
         loadData(savedInstanceState)
         initComponents()
-        holdFragments = HoldFragments()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
