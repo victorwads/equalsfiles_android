@@ -7,7 +7,7 @@ import android.util.AttributeSet;
  * Created by victo on 20/07/2017.
  */
 
-public class ObjectCheckBox<T> extends android.support.v7.widget.AppCompatCheckBox{
+public class ObjectCheckBox<T> extends androidx.appcompat.widget.AppCompatCheckBox{
 	public T object;
 
 	public ObjectCheckBox(Context context){
