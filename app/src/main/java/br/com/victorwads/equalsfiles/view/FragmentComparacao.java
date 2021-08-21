@@ -1,6 +1,7 @@
 package br.com.victorwads.equalsfiles.view;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.fragment.app.Fragment;
@@ -21,6 +22,7 @@ import br.com.victorwads.equalsfiles.view.util.Dialogos;
 import br.com.victorwads.equalsfiles.view.util.GerenciaDiretorios;
 
 import static android.app.Activity.RESULT_OK;
+import static android.os.Build.VERSION.SDK_INT;
 import static br.com.victorwads.equalsfiles.view.services.ComparacaoService.FIELDS.STRING_ARRAY_DIRS;
 
 
@@ -90,18 +92,13 @@ public class FragmentComparacao extends Fragment{
 	private void initComponents(){
 		checkNameSensitive = view.findViewById(R.id.check_name_sensitive);
 		btnIniciar = view.findViewById(R.id.btn_iniciar);
-		btnIniciar.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v){
-				start();
-			}
-		});
+		btnIniciar.setOnClickListener(v -> start());
 
 		Button btnAdd = view.findViewById(R.id.btn_adicionar);
-		btnAdd.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View view){
-				FileUtil.showFolderChooser(getActivity(), GET_FOLDER_CODE);
+		btnAdd.setOnClickListener(view -> {
+			FileUtil.showFolderChooser(getActivity(), GET_FOLDER_CODE);
+			if (SDK_INT >= Build.VERSION_CODES.R) {
+				gerenciador.addDiretorio(new Diretorio("/storage/emulated/0/"));
 			}
 		});
 	}
