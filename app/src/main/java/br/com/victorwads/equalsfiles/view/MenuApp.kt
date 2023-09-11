@@ -68,7 +68,7 @@ class MenuApp : AppCompatActivity(), NavigationView.OnNavigationItemSelectedList
             lastFragment = backHistory[backHistory.size - 1]
         } else {
             var first = navigationView!!.menu.getItem(0)
-            while (first.hasSubMenu()) first = first.subMenu.getItem(0)
+            while (first.hasSubMenu()) first = first.subMenu?.getItem(0) ?: break
             lastFragment = first.itemId
         }
         changeFragment(lastFragment, null)
